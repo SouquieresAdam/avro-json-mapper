@@ -1,6 +1,0 @@
-<root xmlns:ns2="http://namespace.uri/2">
-    <ns2:stringField>Hello</ns2:stringField>
-    <deeperLevel>
-        <thirdStringField>World</thirdStringField>
-    </deeperLevel>
-</root>

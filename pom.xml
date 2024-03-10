@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.michelin</groupId>
-    <artifactId>avro-xml-mapper</artifactId>
-    <name>avro-xml-mapper</name>
+    <artifactId>avro-json-mapper</artifactId>
+    <name>avro-json-mapper</name>
     <version>0.1.5-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>avro-xml-mapper is a library used for simplifying conversions from xml to avro and vice versa using xpath annotations</description>
@@ -14,10 +14,6 @@
 
     <properties>
         <java.version>17</java.version>
-        <sonar.organization>michelin</sonar.organization>
-        <sonar.projectKey>michelin_michelin_avro-xml-mapper</sonar.projectKey>
-        <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <licenses>
@@ -27,36 +23,19 @@
         </license>
     </licenses>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-
-
     <developers>
         <developer>
-            <id>clvacher</id>
-            <name>Clement Vacher</name>
-            <email>dif-hap-dev@michelin.com</email>
-            <url>https://github.com/clvacher</url>
-            <organization>CGI</organization>
+            <id>asouquieres</id>
+            <name>Adam Souquieres</name>
+            <email>souquieres.adam@proton.me</email>
+            <url>https://github.com/AdamSouquieres</url>
+            <organization>Confluent</organization>
             <roles>
                 <role>Developer</role>
             </roles>
         </developer>
     </developers>
 
-    <scm>
-        <connection>scm:git:https://github.com/michelin/avro-xml-mapper.git</connection>
-        <url>scm:git:https://github.com/michelin/avro-xml-mapper.git</url>
-        <developerConnection>scm:git:https://github.com/michelin/avro-xml-mapper.git</developerConnection>
-    </scm>
 
     <build>
         <plugins>
@@ -175,21 +154,20 @@
             <version>2.13.0</version>
         </dependency>
         <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.16.1</version> <!-- Use the latest version available -->
+        </dependency>
+        <dependency>
             <groupId>org.apache.avro</groupId>
             <artifactId>avro</artifactId>
-            <version>1.11.1</version>
+            <version>1.11.3</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-api</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>xmlunit</groupId>
-            <artifactId>xmlunit</artifactId>
-            <version>1.6</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

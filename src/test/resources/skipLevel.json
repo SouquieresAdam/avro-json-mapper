@@ -1,0 +1,11 @@
+{
+  "embedded": {
+    "field1": {
+        "value": "field1-value"
+    },
+    "field2": {
+      "value": "field2-value"
+    },
+    "otherStringField": "otherStringField"
+  }
+}

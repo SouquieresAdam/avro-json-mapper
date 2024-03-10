@@ -1,0 +1,6 @@
+{
+  "embedded": {
+    "stringField": "stringField",
+    "otherStringField": "otherStringField"
+  }
+}

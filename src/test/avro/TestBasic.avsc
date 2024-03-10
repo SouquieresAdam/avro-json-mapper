@@ -1,0 +1,21 @@
+[
+  {
+    "namespace": "com.michelin.avro",
+    "type": "record",
+    "name": "EmbeddedRecord",
+    "fields": [
+      {"name": "stringField", "type" : ["null","string"], "default": null, "jsonpath": "stringField"},
+      {"name": "otherStringField", "type" : ["null","string"], "default": null, "jsonpath": "otherStringField"},
+      {"name": "thirdStringField", "type" : ["null","string"], "default": null}
+    ]
+  },
+  {
+  "namespace": "com.michelin.avro",
+  "jsonpath" : "",
+  "type": "record",
+  "name": "TestBasicRecord",
+  "fields": [
+    {"name": "embeddedRecord", "type" : ["null", "EmbeddedRecord"], "default": null, "jsonpath": "embedded"}
+  ]
+}
+]
