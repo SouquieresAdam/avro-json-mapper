@@ -1,7 +1,8 @@
 package com.michelin.avroxmlmapper;
 
-import com.michelin.avro.*;
+
 import com.michelin.avroxmlmapper.mapper.AvroJsonMapper;
+import io.confluent.ps.demo.*;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,7 @@ class AvroJsonMapperTest {
     void testJsonToAvro() throws Exception {
         var input = IOUtils.toString(Objects.requireNonNull(AvroJsonMapperTest.class.getResourceAsStream("/basic.json")), StandardCharsets.UTF_8);
 
-        var result = AvroJsonMapper.convertJsonStringToAvro(input, "com.michelin.avro", TestBasicRecord.class);
+        var result = AvroJsonMapper.convertJsonStringToAvro(input, "io.confluent.ps.demo", TestBasicRecord.class);
 
         var expectedModel = buildDefaultModel();
 
@@ -29,7 +30,7 @@ class AvroJsonMapperTest {
     void testJsonToAvro_skipLevels() throws Exception {
         var input = IOUtils.toString(Objects.requireNonNull(AvroJsonMapperTest.class.getResourceAsStream("/skipLevel.json")), StandardCharsets.UTF_8);
 
-        var result = AvroJsonMapper.convertJsonStringToAvro(input, "com.michelin.avro", TestSkipLevelRecord.class);
+        var result = AvroJsonMapper.convertJsonStringToAvro(input, "io.confluent.ps.demo", TestSkipLevelRecord.class);
 
         var expectedModel = TestSkipLevelRecord.newBuilder()
                 .setEmbeddedRecord(EmbeddedRecord2.newBuilder()
@@ -46,7 +47,7 @@ class AvroJsonMapperTest {
     void testJsonToAvro_arrays() throws Exception {
         var input = IOUtils.toString(Objects.requireNonNull(AvroJsonMapperTest.class.getResourceAsStream("/arrays.json")), StandardCharsets.UTF_8);
 
-        var result = AvroJsonMapper.convertJsonStringToAvro(input, "com.michelin.avro", TestArrayRecord.class);
+        var result = AvroJsonMapper.convertJsonStringToAvro(input, "io.confluent.ps.demo", TestArrayRecord.class);
 
         var expectedModel = TestArrayRecord.newBuilder()
                 .setEmbeddedRecord(EmbeddedRecord3.newBuilder()

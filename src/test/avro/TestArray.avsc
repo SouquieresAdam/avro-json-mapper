@@ -1,6 +1,6 @@
 [
   {
-    "namespace": "com.michelin.avro",
+    "namespace": "io.confluent.ps.demo",
     "type": "record",
     "name": "EmbeddedRecord3",
     "fields": [
@@ -14,7 +14,7 @@
     ]
   },
   {
-  "namespace": "com.michelin.avro",
+  "namespace": "io.confluent.ps.demo",
   "jsonpath" : "",
   "type": "record",
   "name": "TestArrayRecord",

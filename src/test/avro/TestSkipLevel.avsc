@@ -1,6 +1,6 @@
 [
   {
-    "namespace": "com.michelin.avro",
+    "namespace": "io.confluent.ps.demo",
     "type": "record",
     "name": "EmbeddedRecord2",
     "fields": [
@@ -9,7 +9,7 @@
     ]
   },
   {
-  "namespace": "com.michelin.avro",
+  "namespace": "io.confluent.ps.demo",
   "jsonpath" : "",
   "type": "record",
   "name": "TestSkipLevelRecord",
